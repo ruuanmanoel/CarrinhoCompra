@@ -33,10 +33,12 @@ async function removeItem(userCart, index) {
 
     if(userCart[indexFound].quantity > 1) {
         userCart[indexFound] -= 1;
+        return
     }
 
     if(userCart[indexFound].quantity === 1) {
         userCart.splice(indexFound, 1);
+        return;
     }
 }
 
