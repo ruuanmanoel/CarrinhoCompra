@@ -1,6 +1,11 @@
 // -> adicionar itens
-async function addItem(userCart){
+async function addItem(userCart, item){
+    userCart.push(item)
+}
 
+// -> calcular total
+async function calculateTotal(userCart) {
+    console.log(userCart.reduce((total, item) => total + item.subtotal(), 0));
 }
 
 // -> deletar item do carrinho
@@ -13,7 +18,9 @@ async function removeItem(userCart, index) {
 
 }
 
-// -> calcular total
-async function calculateTotal(userCart) {
-    
+export { 
+    addItem,
+    calculateTotal,
+    deleteItem,
+    removeItem
 }
