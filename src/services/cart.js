@@ -21,9 +21,17 @@ async function removeItem(userCart, index) {
 
 }
 
+async function displayCart(userCart) {
+    console.log("Shopee cart list: ")
+    userCart.forEach((item, index) => {
+        console.log(`${index + 1 }. ${item.name} - R$ ${item.price} | ${item.quantity} | Subtotal: ${item.subtotal()}`)
+    });
+}
+
 export { 
     addItem,
     calculateTotal,
     deleteItem,
-    removeItem
+    removeItem,
+    displayCart
 }
